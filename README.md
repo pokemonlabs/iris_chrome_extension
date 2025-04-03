@@ -2,13 +2,32 @@
 
 A Chrome extension that integrates AI capabilities directly into your browser experience. The primary goal of this project is to demonstrate that advanced AI capabilities can be seamlessly integrated directly into the Chrome browser without requiring external applications or services.
 
-## 🎬 Demo
+## 🎭 Use Cases
 
-https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyuyi.mp4
+Iris Chrome Extension can enhance your browsing experience in numerous ways. Here are some examples of what it can do:
+
+### Professional Communication
+Transform casual emails into polished professional correspondence with a single prompt.
+
+<a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743703216/iris_email_ch68ns.mp4" target="_blank">
+  <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743703216/iris_email_ch68ns.jpg" alt="Iris Email Enhancement Demo">
+</a>
+
+### Social Media Content Creation
+Create engaging social media posts tailored to specific platforms like LinkedIn.
 
 <a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyuyi.mp4" target="_blank">
-  <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743690209/iris_linkedin_gwyuyi.jpg" alt="Iris Chrome Extension Demo">
+  <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743690209/iris_linkedin_gwyuyi.jpg" alt="Iris LinkedIn Post Creation Demo">
 </a>
+
+### Information Extraction & Analysis
+Extract structured data from visual content like graphs and convert it into organized tables.
+
+<a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743704437/information_extraction_zn7dcf.mp4" target="_blank">
+  <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743704437/information_extraction_zn7dcf.jpg" alt="Iris Information Extraction Demo">
+</a>
+
+These are just a few examples of how Iris can assist with your browsing tasks. The extension is designed to be versatile and can help with a wide range of web-based activities.
 
 ## ⚠️ Known Limitations
 
@@ -32,25 +51,6 @@ https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyu
 - Navigation controls for browsing assistance
 - Contextual understanding of web content
 
-## 🎭 Use Cases
-
-Iris Chrome Extension can enhance your browsing experience in numerous ways. Here are some examples of what it can do:
-
-### Professional Communication
-Transform casual emails into polished professional correspondence with a single prompt.
-
-<a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743703216/iris_email_ch68ns.mp4" target="_blank">
-  <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743703216/iris_email_ch68ns.jpg" alt="Iris Email Enhancement Demo">
-</a>
-
-### Social Media Content Creation
-Create engaging social media posts tailored to specific platforms like LinkedIn.
-
-<a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyuyi.mp4" target="_blank">
-  <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743690209/iris_linkedin_gwyuyi.jpg" alt="Iris LinkedIn Post Creation Demo">
-</a>
-
-These are just a few examples of how Iris can assist with your browsing tasks. The extension is designed to be versatile and can help with a wide range of web-based activities.
 
 ## 🚀 Quick Start
 
