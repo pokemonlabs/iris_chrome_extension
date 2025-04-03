@@ -10,11 +10,9 @@ https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyu
   <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743690209/iris_linkedin_gwyuyi.jpg" alt="Iris Chrome Extension Demo">
 </a>
 
-## 🚨 Experimental Project
+## ⚠️ Known Limitations
 
-**Note:** This is an experimental project and is still under active development. Some features may not work as expected:
-
-- **Click Handlers:** Browser interactions like clicking elements may be inconsistent. We're working on improving these handlers. As a workaround, you can use [keyboard shortcuts](#keyboard-shortcuts) for more reliable navigation.
+- **Click Handlers:** Browser interactions like clicking elements may be inconsistent. As a workaround, you can use [keyboard shortcuts](#keyboard-shortcuts) for more reliable navigation.
 
 - **Browser Compatibility:** Currently optimized for Chrome and Chromium-based browsers.
 
@@ -40,8 +38,8 @@ https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyu
 
 1. Clone this repository:
    ```
-   git clone https://github.com/your-username/iris-chrome-extension.git
-   cd iris-chrome-extension
+   git clone https://github.com/pokemonlabs/iris_chrome_extension.git
+   cd iris_chrome_extension
    ```
 
 2. Install dependencies:
@@ -90,7 +88,7 @@ For more reliable navigation when click handlers aren't working:
 
 This extension serves as a proof-of-concept that advanced AI capabilities can be delivered directly through a browser extension, providing a seamless user experience without requiring external tools. By integrating AI directly into Chrome, we're demonstrating the potential for browser-native AI assistants that can understand and interact with web content in sophisticated ways.
 
-While this browser extension is a significant step forward, our main focus continues to be on developing even more capable computer use agents that can perform complex tasks across entire operating systems. These agents are designed to understand and interact with computer interfaces in a more comprehensive way.
+While this browser extension is a significant step forward, our main focus continues to be on developing even more capable computer use agents that can perform complex tasks across entire operating systems. These agents are designed to understand and interact with computer interfaces in a more comprehensive way. Check out our other exciting projects at [https://github.com/pokemonlabs](https://github.com/pokemonlabs).
 
 ## 📝 License
 
