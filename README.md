@@ -32,6 +32,14 @@ https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyu
 - Navigation controls for browsing assistance
 - Contextual understanding of web content
 
+## 🚀 Quick Start
+
+To get started with the Iris Chrome Extension, you can bring your own API keys for AI model access or use OpenRouter to access a variety of models. This flexibility allows you to tailor the extension's capabilities to your specific needs.
+
+Additionally, the extension requires access to a coordinate mapping server that generates the layout of elements on the screen. We provide our own servers for this purpose, which are the same servers we use for our computer use agents. You can obtain your API keys and access our servers at [https://api.tryiris.dev](https://api.pokemonlabs.com).
+
+All configuration options, including API key management and model selection, can be accessed through the extension's settings tab. Simply click on the extension icon and navigate to the settings to customize your experience.
+
 ## 🛠️ Installation
 
 ### Developer Mode
