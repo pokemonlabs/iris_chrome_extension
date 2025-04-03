@@ -11,6 +11,35 @@ export async function handleClick(command: ClickCommand): Promise<string> {
   if (!element) {
     throw new Error(`No element found at coordinates (${x}, ${y})`);
   }
+
+  // Add this new handling for input elements with custom attributes
+  if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
+    // Ensure element is focused and cursor is placed
+    element.focus();
+    
+    // Set selection range to place cursor at end
+    const length = element.value.length;
+    element.setSelectionRange(length, length);
+    
+    // Dispatch focus and input events
+    element.dispatchEvent(new Event('focus', { bubbles: true }));
+    element.dispatchEvent(new Event('input', { bubbles: true }));
+    
+    // Handle custom JS actions if present
+    const jsAction = element.getAttribute('jsaction');
+    if (jsAction) {
+      const clickAction = jsAction.split(';').find(a => a.startsWith('click:'));
+      if (clickAction) {
+        const event = new CustomEvent('click', {
+          bubbles: true,
+          detail: { action: clickAction }
+        });
+        element.dispatchEvent(event);
+      }
+    }
+    
+    return `Clicked and focused input at (${x}, ${y}) on ${describeElement(element)}`;
+  }
   
   // Try multiple approaches for the most reliable click simulation
 
@@ -92,30 +121,26 @@ export async function handleClick(command: ClickCommand): Promise<string> {
       }
     }
     
-    // 4. Try using alternative initialization
+    // 4. Use more direct method to ensure element interaction
     try {
-      // Create an Event, initialize it, and dispatch
-      const mouseEvent = document.createEvent('MouseEvents');
-      mouseEvent.initMouseEvent(
-        'click',       // type
-        true,          // canBubble
-        true,          // cancelable
-        window,        // view
-        1,             // detail (click count)
-        screenX,       // screenX
-        screenY,       // screenY
-        x,             // clientX
-        y,             // clientY
-        false,         // ctrlKey
-        false,         // altKey
-        false,         // shiftKey
-        false,         // metaKey
-        0,             // button
-        null           // relatedTarget
-      );
-      element.dispatchEvent(mouseEvent);
+      // Handle dialog boxes and other special elements by focusing first
+      if (element instanceof HTMLElement) {
+        // Focus and manually trigger relevant events
+        element.focus();
+        
+        // For form elements, try more specific interactions
+        if (element instanceof HTMLSelectElement) {
+          element.click();
+          // Trigger a change event to ensure UI updates
+          element.dispatchEvent(new Event('change', { bubbles: true }));
+        } else if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
+          // For text inputs, ensure they're both focused and clicked
+          element.click();
+          element.dispatchEvent(new Event('focus', { bubbles: true }));
+        }
+      }
     } catch (err) {
-      console.warn('Legacy event approach failed:', err);
+      console.warn('Advanced element interaction failed:', err);
     }
     
     return `Clicked at (${x}, ${y}) on ${describeElement(element)}`;
@@ -201,29 +226,33 @@ export async function handleDoubleClick(command: DoubleClickCommand): Promise<st
     }
   }
   
-  // Try legacy approach as backup
+  // Try to force the interaction based on element type
   try {
-    const mouseEvent = document.createEvent('MouseEvents');
-    mouseEvent.initMouseEvent(
-      'dblclick',    // type
-      true,          // canBubble
-      true,          // cancelable
-      window,        // view
-      2,             // detail (click count = 2 for double click)
-      screenX,       // screenX
-      screenY,       // screenY
-      x,             // clientX
-      y,             // clientY
-      false,         // ctrlKey
-      false,         // altKey
-      false,         // shiftKey
-      false,         // metaKey
-      0,             // button
-      null           // relatedTarget
-    );
-    element.dispatchEvent(mouseEvent);
+    // Handle specific element types that might need special handling
+    if (element instanceof HTMLInputElement || element instanceof HTMLTextAreaElement) {
+      // Ensure text inputs are focused and selected
+      element.focus();
+      element.select();
+    } else if (element instanceof HTMLSelectElement) {
+      // For dropdown elements
+      element.focus();
+      element.click();
+      element.dispatchEvent(new Event('change', { bubbles: true }));
+    } else if (element instanceof HTMLElement) {
+      // Simulate a more natural double-click for other elements
+      element.dispatchEvent(new MouseEvent('dblclick', {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        detail: 2,
+        clientX: x,
+        clientY: y,
+        screenX: screenX,
+        screenY: screenY
+      }));
+    }
   } catch (err) {
-    console.warn('Legacy double-click approach failed:', err);
+    console.warn('Advanced double-click interaction failed:', err);
   }
   
   return `Double-clicked at (${x}, ${y}) on ${describeElement(element)}`;
@@ -271,29 +300,33 @@ export async function handleMouseMove(command: MouseMoveCommand): Promise<string
   });
   element.dispatchEvent(mouseEnter);
   
-  // Try legacy approach as backup for some older applications
+  // Try additional hover event for better interaction
   try {
-    const mouseEvent = document.createEvent('MouseEvents');
-    mouseEvent.initMouseEvent(
-      'mousemove',   // type
-      true,          // canBubble
-      true,          // cancelable
-      window,        // view
-      0,             // detail
-      screenX,       // screenX
-      screenY,       // screenY
-      x,             // clientX
-      y,             // clientY
-      false,         // ctrlKey
-      false,         // altKey
-      false,         // shiftKey
-      false,         // metaKey
-      0,             // button
-      null           // relatedTarget
-    );
-    element.dispatchEvent(mouseEvent);
+    // Trigger hover state explicitly for better compatibility with CSS :hover
+    if (element instanceof HTMLElement) {
+      // Create and dispatch a hover-related event
+      const hoverEvent = new MouseEvent('mouseover', {
+        bubbles: true,
+        cancelable: true,
+        view: window,
+        clientX: x,
+        clientY: y,
+        screenX: screenX,
+        screenY: screenY
+      });
+      
+      // Dispatch both to element and its parent for CSS hover state propagation
+      element.dispatchEvent(hoverEvent);
+      
+      // For special elements that might have dropdown menus
+      if (element instanceof HTMLSelectElement || 
+          element.tagName === 'BUTTON' || 
+          element.getAttribute('role') === 'button') {
+        element.focus();
+      }
+    }
   } catch (err) {
-    console.warn('Legacy mousemove approach failed:', err);
+    console.warn('Advanced hover interaction failed:', err);
   }
   
   return `Moved mouse to (${x}, ${y}) over ${describeElement(element)}`;
