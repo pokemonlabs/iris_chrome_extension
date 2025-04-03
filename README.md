@@ -11,6 +11,7 @@ Transform casual emails into polished professional correspondence with a single 
 
 <a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743703216/iris_email_ch68ns.mp4" target="_blank">
   <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743703216/iris_email_ch68ns.jpg" alt="Iris Email Enhancement Demo">
+  <p align="center"><strong>▶️ Click to watch demo video</strong></p>
 </a>
 
 ### Social Media Content Creation
@@ -18,6 +19,7 @@ Create engaging social media posts tailored to specific platforms like LinkedIn.
 
 <a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743690209/iris_linkedin_gwyuyi.mp4" target="_blank">
   <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743690209/iris_linkedin_gwyuyi.jpg" alt="Iris LinkedIn Post Creation Demo">
+  <p align="center"><strong>▶️ Click to watch demo video</strong></p>
 </a>
 
 ### Information Extraction & Analysis
@@ -25,6 +27,7 @@ Extract structured data from visual content like graphs and convert it into orga
 
 <a href="https://res.cloudinary.com/ddg8uxqb1/video/upload/v1743704437/information_extraction_zn7dcf.mp4" target="_blank">
   <img src="https://res.cloudinary.com/ddg8uxqb1/video/upload/c_scale,w_800/v1743704437/information_extraction_zn7dcf.jpg" alt="Iris Information Extraction Demo">
+  <p align="center"><strong>▶️ Click to watch demo video</strong></p>
 </a>
 
 These are just a few examples of how Iris can assist with your browsing tasks. The extension is designed to be versatile and can help with a wide range of web-based activities.
