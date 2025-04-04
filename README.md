@@ -57,7 +57,7 @@ These are just a few examples of how Iris can assist with your browsing tasks. T
 
 ## 🚀 Quick Start
 
-To get started with the Iris Chrome Extension, you can bring your own API keys for AI model access or use OpenRouter to access a variety of models. This flexibility allows you to tailor the extension's capabilities to your specific needs.
+To get started with the Iris Chrome Extension, you can bring your own API keys for AI model access or use OpenRouter to access a variety of models. This extension has been tested with Google Gemma 27B and Nova ACT, both of which perform exceptionally well with the extension's features. This flexibility allows you to tailor the extension's capabilities to your specific needs.
 
 Additionally, the extension requires access to a coordinate mapping server that generates the layout of elements on the screen. We provide our own servers for this purpose, which are the same servers we use for our computer use agents. You can obtain your API keys and access our servers at [https://api.tryiris.dev](https://api.pokemonlabs.com).
 

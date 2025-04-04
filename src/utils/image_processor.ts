@@ -72,8 +72,14 @@ export class OcularProcessor {
               - Detect error messages and respond accordingly
               
               If the goal is achieved:
-              - Clearly indicate success with "GOAL_ACHIEVED: [brief explanation]"
-              - Don't suggest further actions if unnecessary`
+              - Clearly indicate success with "GOAL_ACHIEVED"
+              - Don't suggest further actions if unnecessary
+              
+              
+              <instructions>
+                Your thinking process is internal, and you don't have to tell these to me, if actions are to be taken output the actions without additional commentary please.
+              </instructions>
+              `
             }
           ]
         }, 
@@ -125,7 +131,7 @@ export class OcularProcessor {
               ${input.previousActions}
             </previous_actions>
             
-            Think through this situation carefully:
+            Think internally through this situation carefully:
             1. Has the goal been achieved? If yes, state this clearly.
             2. Was the last action successful? If not, why not and what should we do differently?
             3. Are we on the expected page/state? If not, how should we navigate to the correct place?
